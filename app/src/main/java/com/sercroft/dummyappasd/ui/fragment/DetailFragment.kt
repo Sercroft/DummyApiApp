@@ -30,8 +30,6 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
         titleView.text          = args.postName
         descriptionView.text    = jsonToTextDescription
 
-        Log.d("TAG-1", "URL: ${args.postUrl}")
-
         Glide.with(this)
             .load(args.postUrl)
             .override(150, 150)
