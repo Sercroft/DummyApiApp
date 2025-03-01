@@ -1,6 +1,7 @@
 package com.sercroft.dummyappasd.ui.fragment
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.EditText
 import android.widget.ProgressBar
@@ -36,9 +37,13 @@ class MainFragment : Fragment(R.layout.fragment_main) {
 
         postAdapter = PostAdapter({ post, imageUrl ->
             val action = MainFragmentDirections.actionMainFragmentToDetailFragment(
-                postId      = post.id,
-                postTitle   = post.title,
-                postUrl     = imageUrl ?: post.url
+                postId          = post.id,
+                postName        = post.name,
+                postEmail       = post.email,
+                postUserName    = post.userName,
+                postPhone       = post.phone,
+                postWebsite     = post.website,
+                postUrl         = imageUrl ?: ""
             )
             findNavController().navigate(action)
         }, randomDogApiService)

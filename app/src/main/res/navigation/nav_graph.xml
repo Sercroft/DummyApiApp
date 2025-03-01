@@ -16,8 +16,22 @@
                 android:name="postId"
                 app:argType="integer" />
             <argument
-                android:name="postTitle"
+                android:name="postName"
                 app:argType="string" />
+
+            <argument
+                android:name="postEmail"
+                app:argType="string" />
+            <argument
+                android:name="postUserName"
+                app:argType="string" />
+            <argument
+                android:name="postPhone"
+                app:argType="string" />
+            <argument
+                android:name="postWebsite"
+                app:argType="string" />
+
             <argument
                 android:name="postUrl"
                 app:argType="string" />
@@ -33,8 +47,22 @@
             android:name="postId"
             app:argType="integer" />
         <argument
-            android:name="postTitle"
+            android:name="postName"
             app:argType="string" />
+
+        <argument
+            android:name="postEmail"
+            app:argType="string" />
+        <argument
+            android:name="postUserName"
+            app:argType="string" />
+        <argument
+            android:name="postPhone"
+            app:argType="string" />
+        <argument
+            android:name="postWebsite"
+            app:argType="string" />
+
         <argument
             android:name="postUrl"
             app:argType="string" />

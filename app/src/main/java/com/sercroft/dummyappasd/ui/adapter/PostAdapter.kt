@@ -1,5 +1,6 @@
 package com.sercroft.dummyappasd.ui.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,7 +19,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class PostAdapter(
-    private val onItemClick: (Post, String?) -> Unit, // Modificación aquí
+    private val onItemClick: (Post, String?) -> Unit,
     private val randomDogApiService: RandomDogApiService
 ) : ListAdapter<Post, PostAdapter.PostViewHolder>(PostDiffCallback()) {
 
@@ -38,13 +39,23 @@ class PostAdapter(
     inner class PostViewHolder(
         view: View,
         private val randomDogApiService: RandomDogApiService,
-        private val onItemClick: (Post, String?) -> Unit // Modificación aquí
+        private val onItemClick: (Post, String?) -> Unit
     ) : RecyclerView.ViewHolder(view) {
-        private val title: TextView = view.findViewById(R.id.title)
-        private val postImage: ImageView = view.findViewById(R.id.postImage)
 
+        private val postImage   : ImageView = view.findViewById(R.id.postImage)
+        private val name        : TextView = view.findViewById(R.id.name)
+        private val email       : TextView = view.findViewById(R.id.email)
+        private val userName    : TextView = view.findViewById(R.id.userName)
+        private val phone       : TextView = view.findViewById(R.id.phone)
+        private val website     : TextView = view.findViewById(R.id.website)
+
+        @SuppressLint("SetTextI18n")
         fun bind(post: Post, position: Int) {
-            title.text = post.title
+            name.text       = "Name: ${post.name}"
+            email.text      = "Email: ${post.email}"
+            userName.text   = "User Name: ${post.userName}"
+            phone.text      = "Phone: ${post.phone}"
+            website.text    = "Website: ${post.website}"
 
             // Save images in cache
             val cachedImageUrl = dogImageUrls.getOrNull(position)

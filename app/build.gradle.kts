@@ -40,6 +40,11 @@ android {
         dataBinding = true
         viewBinding = true
     }
+
+    packagingOptions {
+        exclude("META-INF/LICENSE.md")
+        exclude("META-INF/LICENSE-notice.md")
+    }
 }
 
 dependencies {
@@ -63,6 +68,11 @@ dependencies {
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation("com.google.code.gson:gson:2.8.8")
 
+    // Room
+    implementation("androidx.room:room-runtime:2.6.1")
+    kapt("androidx.room:room-compiler:2.6.1")
+    implementation("androidx.room:room-ktx:2.6.1")
+
     // Glide
     implementation("com.github.bumptech.glide:glide:4.12.0")
     implementation(libs.androidx.junit.ktx)
@@ -76,12 +86,15 @@ dependencies {
     implementation("androidx.recyclerview:recyclerview:1.3.2")
 
     // Testing
-    testImplementation("junit:junit:4.13.2")
-    testImplementation("org.mockito:mockito-core:3.11.2")
-    testImplementation("org.mockito:mockito-inline:3.11.2")
-    testImplementation("androidx.arch.core:core-testing:2.1.0")
-    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.5.2")
-
+    debugImplementation("junit:junit:4.13.2")
+    debugImplementation("org.mockito:mockito-core:4.3.1")
+    debugImplementation("org.mockito:mockito-inline:4.3.1")
+    debugImplementation("org.mockito:mockito-junit-jupiter:4.3.1")
+    androidTestImplementation("org.mockito:mockito-android:4.3.1")
+    debugImplementation("androidx.arch.core:core-testing:2.1.0")
+    debugImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.5.2")
+    debugImplementation("androidx.test.ext:junit:1.1.3")
+    androidTestImplementation("androidx.test:core:1.4.0")
 }
 
 // Allow references to generated code

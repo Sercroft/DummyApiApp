@@ -27,10 +27,10 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
         val titleView           = view.findViewById<TextView>(R.id.detailTitle)
         val descriptionView     = view.findViewById<TextView>(R.id.detailDescription)
 
-        titleView.text          = args.postTitle
+        titleView.text          = args.postName
         descriptionView.text    = jsonToTextDescription
 
-        Log.d("TAG-1", "UR;: ${args.postUrl}")
+        Log.d("TAG-1", "URL: ${args.postUrl}")
 
         Glide.with(this)
             .load(args.postUrl)

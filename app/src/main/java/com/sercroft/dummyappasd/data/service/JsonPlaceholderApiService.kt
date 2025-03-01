@@ -5,6 +5,6 @@ import retrofit2.Response
 import retrofit2.http.GET
 
 interface JsonPlaceholderApiService{
-    @GET("photos")
+    @GET("users")
     suspend fun getPosts(): Response<List<Post>>
 }
